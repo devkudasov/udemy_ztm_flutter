@@ -6,7 +6,7 @@ int secretNumber = Random().nextInt(100) + 1;
 void main() {
   bool isUserGuess = false;
 
-  print('Can you guess what number is?');
+  print('Can you guess what number is (from 1 to 100)?');
 
   int attemptAmount = 7;
   for (int i = 0; i < attemptAmount; i++) {
