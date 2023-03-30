@@ -34,7 +34,7 @@ void main() {
 }
 
 void showWrongChoiceHint() {
-  print('You can selecte only add or del or show');
+  print('You can select only add or del or show');
 }
 
 void showSuccessDeleteHint(String name) {
