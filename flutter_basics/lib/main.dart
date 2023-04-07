@@ -37,8 +37,26 @@ class ScaffoldBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Hello World'),
+    return Center(
+      child: Container(
+        height: 200.0,
+        width: 200.0,
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: const Center(
+          child: Text(
+            'Hello World',
+            style: TextStyle(
+              color: Colors.red,
+              fontSize: 20.0,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
