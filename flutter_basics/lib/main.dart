@@ -37,25 +37,47 @@ class ScaffoldBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 200.0,
-        width: 200.0,
-        decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: const Center(
-          child: Text(
-            'Hello World',
-            style: TextStyle(
-              color: Colors.red,
-              fontSize: 20.0,
-              fontStyle: FontStyle.italic,
-              fontWeight: FontWeight.bold,
+    return Container(
+      color: Colors.pink,
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            color: Colors.green,
+            child: const Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Text(
+                'First column child',
+              ),
             ),
           ),
-        ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          Container(
+            height: 200.0,
+            width: 200.0,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color: Colors.blue,
+            ),
+            child: const Text(
+              'Hello World',
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 20.0,
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 40.0,
+          ),
+          const Text(
+            'Last Column child',
+          ),
+        ],
       ),
     );
   }
