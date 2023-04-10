@@ -16,22 +16,22 @@ class QuestionCard extends StatelessWidget {
       elevation: 5.0,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
+        child: Row(
           children: [
-            Text(
-              _question.getCategory(),
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0,
-              ),
+            SizedBox(
+              width: 100.0,
+              height: 100.0,
+              child: Image.asset(_question.image),
             ),
             const SizedBox(
-              height: 16.0,
+              width: 16.0,
             ),
-            Text(
-              _question.getText(),
-              style: const TextStyle(
-                fontSize: 16.0,
+            Flexible(
+              child: Text(
+                _question.text,
+                style: const TextStyle(
+                  fontSize: 16.0,
+                ),
               ),
             ),
           ],

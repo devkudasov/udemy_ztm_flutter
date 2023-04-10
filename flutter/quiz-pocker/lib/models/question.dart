@@ -1,5 +1,5 @@
 class Question {
-  late String _category;
+  late QuestionCategory _category;
   late String _text;
 
   Question({required category, required text}) {
@@ -8,6 +8,28 @@ class Question {
   }
 
   // Getters
-  String getText() => _text;
-  String getCategory() => _category;
+  String get text => _text;
+  String get category => questionCategoryTitle[_category]!;
+  String get image => questionCategoryImage[_category]!;
 }
+
+enum QuestionCategory {
+  sport,
+  business,
+  movie,
+  videoGame,
+}
+
+Map<QuestionCategory, String> questionCategoryImage = {
+  QuestionCategory.sport: 'assets/categories/sport.png',
+  QuestionCategory.business: 'assets/categories/business.png',
+  QuestionCategory.movie: 'assets/categories/movie.png',
+  QuestionCategory.videoGame: 'assets/categories/video_game.png',
+};
+
+Map<QuestionCategory, String> questionCategoryTitle = {
+  QuestionCategory.sport: 'Sport',
+  QuestionCategory.business: 'Business',
+  QuestionCategory.movie: 'Movie',
+  QuestionCategory.videoGame: 'Video Game',
+};
