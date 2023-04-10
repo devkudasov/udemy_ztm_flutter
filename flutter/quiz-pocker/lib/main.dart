@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quizpocker/managers/question_manager.dart';
+import 'package:quizpocker/models/question.dart';
+import 'package:quizpocker/widgets/question_card.dart';
 
 void main() => runApp(const App());
 
@@ -11,15 +14,18 @@ class App extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: Home(),
     );
   }
 }
 
 class Home extends StatelessWidget {
-  const Home({
-    super.key,
-  });
+  final QuestionManager _questionManager = QuestionManager();
+  late final Question _question;
+
+  Home({super.key}) {
+    _question = _questionManager.getQuestion();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +34,15 @@ class Home extends StatelessWidget {
         title: const Center(
           child: Text('Quiz App'),
         ),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: QuestionCard(question: _question),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
