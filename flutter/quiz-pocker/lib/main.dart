@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
             ),
           );
         },
-        child: const Icon(Icons.favorite),
+        child: const Icon(Icons.add),
       ),
     );
   }

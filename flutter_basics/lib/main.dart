@@ -100,6 +100,29 @@ class ScaffoldBody extends StatelessWidget {
               ),
             ),
           ),
+          Stack(
+            children: [
+              SizedBox(
+                height: 100.0,
+                width: 100.0,
+                child: Image.asset(
+                  'assets/asset.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const Positioned(
+                top: 45,
+                child: Text('Kudasov'),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 100.0,
+            width: 100.0,
+            child: CircleAvatar(
+              backgroundImage: AssetImage('assets/asset.png'),
+            ),
+          ),
           const SizedBox(
             height: 40.0,
           ),
