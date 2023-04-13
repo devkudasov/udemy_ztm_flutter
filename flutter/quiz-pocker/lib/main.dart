@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quizpocker/managers/question_manager.dart';
 import 'package:quizpocker/widgets/question_card.dart';
+import 'package:quizpocker/widgets/scroll_widget.dart';
 
 void main() => runApp(const App());
 
@@ -31,17 +32,7 @@ class Home extends StatelessWidget {
           child: Text('Quiz App'),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: _questionManager
-                .getQuestions()
-                .map((question) => QuestionCard(question: question))
-                .toList(),
-          ),
-        ),
-      ),
+      body: ScrollWidget(questionManager: _questionManager),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           ScaffoldMessenger.of(context).showSnackBar(

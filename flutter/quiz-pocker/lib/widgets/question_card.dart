@@ -14,27 +14,30 @@ class QuestionCard extends StatelessWidget {
     return Card(
       color: Colors.amber[100],
       elevation: 5.0,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 100.0,
-              height: 100.0,
-              child: Image.asset(_question.image),
-            ),
-            const SizedBox(
-              width: 16.0,
-            ),
-            Flexible(
-              child: Text(
-                _question.text,
-                style: const TextStyle(
-                  fontSize: 16.0,
+      child: SizedBox(
+        width: 300.0,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            children: [
+              SizedBox(
+                width: 100.0,
+                height: 100.0,
+                child: Image.asset(_question.image),
+              ),
+              const SizedBox(
+                width: 16.0,
+              ),
+              Flexible(
+                child: Text(
+                  _question.text,
+                  style: const TextStyle(
+                    fontSize: 16.0,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
