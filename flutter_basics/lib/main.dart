@@ -152,41 +152,31 @@ class ScaffoldBody extends StatelessWidget {
                 backgroundImage: AssetImage('assets/asset.png'),
               ),
             ),
-            const SizedBox(
-              height: 40.0,
-            ),
-            const SizedBox(
-              height: 100.0,
-              width: 100.0,
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/asset.png'),
-              ),
-            ),
-            const SizedBox(
-              height: 40.0,
-            ),
-            const SizedBox(
-              height: 100.0,
-              width: 100.0,
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/asset.png'),
-              ),
-            ),
-            const SizedBox(
-              height: 40.0,
-            ),
-            const SizedBox(
-              height: 100.0,
-              width: 100.0,
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/asset.png'),
-              ),
+            Container(
+              width: 300.0,
+              height: 300.0,
+              color: Colors.yellow,
+              child: LayoutBuilder(builder: (context, constraints) {
+                return Center(
+                  child: Container(
+                    color: Colors.blue,
+                    width: constraints.maxWidth / 2,
+                    height: constraints.maxHeight / 2,
+                    child: const Center(
+                      child: Text('Layout Builder Example'),
+                    ),
+                  ),
+                );
+              }),
             ),
             const SizedBox(
               height: 40.0,
             ),
             const Text(
               'Last Column child',
+            ),
+            const SizedBox(
+              height: 40.0,
             ),
           ],
         ),
