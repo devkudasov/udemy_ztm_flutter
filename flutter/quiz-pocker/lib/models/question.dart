@@ -9,27 +9,32 @@ class Question {
 
   // Getters
   String get text => _text;
-  String get category => questionCategoryTitle[_category]!;
-  String get image => questionCategoryImage[_category]!;
+  String get category => _category.title;
+  String get image => _category.image;
 }
 
 enum QuestionCategory {
-  sport,
-  business,
-  movie,
-  videoGame,
+  sport(
+    'Sport',
+    'assets/categories/sport.png',
+  ),
+  business(
+    'Business',
+    'assets/categories/business.png',
+  ),
+  movie(
+    'Movie',
+    'assets/categories/movie.png',
+  ),
+  videoGame(
+    'Video Game',
+    'assets/categories/video_game.png',
+  );
+
+  final String _title;
+  final String _image;
+  const QuestionCategory(this._title, this._image);
+
+  String get title => _title;
+  String get image => _image;
 }
-
-Map<QuestionCategory, String> questionCategoryImage = {
-  QuestionCategory.sport: 'assets/categories/sport.png',
-  QuestionCategory.business: 'assets/categories/business.png',
-  QuestionCategory.movie: 'assets/categories/movie.png',
-  QuestionCategory.videoGame: 'assets/categories/video_game.png',
-};
-
-Map<QuestionCategory, String> questionCategoryTitle = {
-  QuestionCategory.sport: 'Sport',
-  QuestionCategory.business: 'Business',
-  QuestionCategory.movie: 'Movie',
-  QuestionCategory.videoGame: 'Video Game',
-};
