@@ -8,6 +8,8 @@ import 'package:basics/presentation/screens/widget_examples/widgets/media_query_
 import 'package:basics/presentation/screens/widget_examples/widgets/row_expanded_example.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/divider_example.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/stack_example.dart';
+import 'package:basics/presentation/widgets/custom_button.dart';
+import 'package:basics/presentation/widgets/gesture_custom_button.dart';
 import 'package:flutter/material.dart';
 
 class WidgetExamplesScreen extends StatelessWidget {
@@ -42,24 +44,39 @@ class ScaffoldBody extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            DividerExample(),
-            MediaQueryExample(),
-            DividerExample(),
-            RowExpandedExample(),
-            DividerExample(),
-            FirstColumnChild(),
-            DividerExample(),
-            HelloWorld(),
-            DividerExample(),
-            StackExample(),
-            DividerExample(),
-            AvatarExample(),
-            DividerExample(),
-            LayoutBuilderExample(),
-            DividerExample(),
-            ButtonsExample(),
-            DividerExample(),
+          children: [
+            const DividerExample(),
+            const MediaQueryExample(),
+            const DividerExample(),
+            const RowExpandedExample(),
+            const DividerExample(),
+            const FirstColumnChild(),
+            const DividerExample(),
+            const HelloWorld(),
+            const DividerExample(),
+            const StackExample(),
+            const DividerExample(),
+            const AvatarExample(),
+            const DividerExample(),
+            const LayoutBuilderExample(),
+            const DividerExample(),
+            const ButtonsExample(),
+            const DividerExample(),
+            CustomButton(
+              onTap: () => print('Custom Button tapped'),
+              icon: Icons.home,
+            ),
+            const DividerExample(),
+            CustomButton(
+              onTap: () => print('Custom Button tapped'),
+              icon: Icons.play_arrow,
+            ),
+            const DividerExample(),
+            GestureCustomButton(
+              onTap: () => print('Gesture Button tapped'),
+              text: 'Gesture Button',
+            ),
+            const DividerExample(),
           ],
         ),
       ),
