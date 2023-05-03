@@ -1,5 +1,6 @@
 import 'package:basics/presentation/screens/widget_examples/widgets/app_bar_title.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/avatar_example.dart';
+import 'package:basics/presentation/screens/widget_examples/widgets/buttons_example.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/first_column_child.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/hello_world.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/layout_builder_example.dart';
@@ -56,6 +57,8 @@ class ScaffoldBody extends StatelessWidget {
             AvatarExample(),
             DividerExample(),
             LayoutBuilderExample(),
+            DividerExample(),
+            ButtonsExample(),
             DividerExample(),
           ],
         ),
