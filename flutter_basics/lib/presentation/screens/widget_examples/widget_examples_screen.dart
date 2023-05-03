@@ -5,6 +5,7 @@ import 'package:basics/presentation/screens/widget_examples/widgets/first_column
 import 'package:basics/presentation/screens/widget_examples/widgets/hello_world.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/layout_builder_example.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/media_query_example.dart';
+import 'package:basics/presentation/screens/widget_examples/widgets/person.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/row_expanded_example.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/divider_example.dart';
 import 'package:basics/presentation/screens/widget_examples/widgets/stack_example.dart';
@@ -56,7 +57,13 @@ class ScaffoldBody extends StatelessWidget {
             const DividerExample(),
             const StackExample(),
             const DividerExample(),
-            const AvatarExample(),
+            const Person(
+              pictureUrl: 'assets/asset.png',
+              name: 'Dmitry Kudasov',
+              age: '35',
+              country: 'Belarus',
+              job: 'Dev Lead',
+            ),
             const DividerExample(),
             const LayoutBuilderExample(),
             const DividerExample(),
