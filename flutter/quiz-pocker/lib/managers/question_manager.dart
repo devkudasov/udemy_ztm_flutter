@@ -7,4 +7,10 @@ class QuestionManager {
   }
 
   List<Question> getQuestions() => questions;
+
+  void addQuestion() => questions.add(
+        Question(
+            category: QuestionCategory.business,
+            text: 'This is new question there'),
+      );
 }
