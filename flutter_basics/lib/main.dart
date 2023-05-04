@@ -1,4 +1,4 @@
-import 'package:basics/presentation/screens/widget_examples/widget_examples_screen.dart';
+import 'package:basics/presentation/screens/counter/counter_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.amber,
         ),
       ),
-      home: const WidgetExamplesScreen(),
+      home: const CounterScreen(),
     );
   }
 }
