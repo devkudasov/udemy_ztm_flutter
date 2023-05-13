@@ -17,18 +17,10 @@ class ScrollWidget extends StatelessWidget {
         .getQuestions()
         .map((question) => QuestionCard(question: question))
         .toList();
-    final Widget directionWidget = isSmallScreen
-        ? Column(children: questionsList)
-        : Row(children: questionsList);
 
-    return SingleChildScrollView(
+    return ListView(
       scrollDirection: isSmallScreen ? Axis.vertical : Axis.horizontal,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Center(
-          child: directionWidget,
-        ),
-      ),
+      children: questionsList,
     );
   }
 }
