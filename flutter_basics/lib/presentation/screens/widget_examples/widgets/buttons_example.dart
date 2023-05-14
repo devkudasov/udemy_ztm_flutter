@@ -1,3 +1,5 @@
+import 'package:basics/presentation/screens/navigation_example_screens/screen_one.dart';
+import 'package:basics/presentation/screens/navigation_example_screens/screen_two.dart';
 import 'package:flutter/material.dart';
 
 class ButtonsExample extends StatefulWidget {
@@ -15,7 +17,14 @@ class _ButtonsExampleState extends State<ButtonsExample> {
     return Column(
       children: [
         TextButton(
-          onPressed: () => print('Text button pressed'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ScreenOneScreen(),
+              ),
+            );
+          },
           onLongPress: () => print('Text button long pressed'),
           child: Container(
             decoration: const BoxDecoration(
@@ -35,7 +44,14 @@ class _ButtonsExampleState extends State<ButtonsExample> {
           ),
         ),
         IconButton(
-          onPressed: () => print('Icon button pressed'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ScreenTwoScreen(),
+              ),
+            );
+          },
           icon: const Icon(Icons.play_arrow),
         ),
         Switch(
