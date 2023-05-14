@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:quizpocker/managers/question_manager.dart';
-import 'package:quizpocker/widgets/question_card.dart';
+import 'package:quizpocker/screens/question_list/widgets/question_card.dart';
 
-class ScrollWidget extends StatelessWidget {
-  const ScrollWidget({
+class QuestionListScreen extends StatelessWidget {
+  const QuestionListScreen({
     super.key,
     required QuestionManager questionManager,
   }) : _questionManager = questionManager;

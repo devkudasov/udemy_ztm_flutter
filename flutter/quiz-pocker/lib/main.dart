@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:quizpocker/data/questions.dart';
 import 'package:quizpocker/managers/question_manager.dart';
-import 'package:quizpocker/widgets/scroll_widget.dart';
+import 'package:quizpocker/screens/question_details/question_details.dart';
+import 'package:quizpocker/screens/question_list/question_list.dart';
+
+final QuestionManager _questionManager = QuestionManager();
 
 void main() => runApp(const App());
 
@@ -13,15 +17,13 @@ class App extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: Home(),
+      home: const Home(),
     );
   }
 }
 
 class Home extends StatelessWidget {
-  final QuestionManager _questionManager = QuestionManager();
-
-  Home({super.key});
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +33,17 @@ class Home extends StatelessWidget {
           child: Text('Quiz App'),
         ),
       ),
-      body: ScrollWidget(questionManager: _questionManager),
+      body: QuestionListScreen(questionManager: _questionManager),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _questionManager.addQuestion();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => QuestionDetails(
+                question: _questionManager.getQuestion(),
+              ),
+            ),
+          );
         },
         child: const Icon(Icons.add),
       ),

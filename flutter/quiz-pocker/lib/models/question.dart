@@ -1,16 +1,36 @@
 class Question {
   late QuestionCategory _category;
   late String _text;
+  late List<String> _hints;
+  late String _solution;
 
-  Question({required category, required text}) {
+  int _shownHintIndex = -1;
+
+  Question({required category, required text, hints, required solution}) {
     _category = category;
     _text = text;
+    _hints = hints;
+    _solution = solution;
+  }
+
+  String showNextHint() {
+    if (hasHint) {
+      return nextHint;
+    }
+
+    return _solution;
   }
 
   // Getters
   String get text => _text;
   String get category => _category.title;
   String get image => _category.image;
+  bool get hasHint {
+    print('hasHint $_shownHintIndex');
+    return _shownHintIndex + 1 < _hints.length;
+  }
+
+  String get nextHint => _hints[++_shownHintIndex];
 }
 
 enum QuestionCategory {
