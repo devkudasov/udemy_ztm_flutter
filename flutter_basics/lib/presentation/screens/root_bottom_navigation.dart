@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class RootBottonNavigation extends StatefulWidget {
   const RootBottonNavigation({super.key});
+  static const String id = '/root';
 
   @override
   State<RootBottonNavigation> createState() => _RootBottonNavigation();

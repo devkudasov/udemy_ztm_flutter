@@ -18,12 +18,7 @@ class _ButtonsExampleState extends State<ButtonsExample> {
       children: [
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ScreenOneScreen(),
-              ),
-            );
+            Navigator.pushNamed(context, ScreenOneScreen.id);
           },
           onLongPress: () => print('Text button long pressed'),
           child: Container(
@@ -45,12 +40,7 @@ class _ButtonsExampleState extends State<ButtonsExample> {
         ),
         IconButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ScreenTwoScreen(),
-              ),
-            );
+            Navigator.pushNamed(context, ScreenTwoScreen.id);
           },
           icon: const Icon(Icons.play_arrow),
         ),

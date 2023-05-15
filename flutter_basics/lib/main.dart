@@ -1,3 +1,5 @@
+import 'package:basics/presentation/screens/navigation_example_screens/screen_one.dart';
+import 'package:basics/presentation/screens/navigation_example_screens/screen_two.dart';
 import 'package:basics/presentation/screens/root_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
@@ -11,13 +13,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        useMaterial3: true,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.amber,
+        theme: ThemeData(
+          useMaterial3: true,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.amber,
+          ),
         ),
-      ),
-      home: const RootBottonNavigation(),
-    );
+        initialRoute: RootBottonNavigation.id,
+        routes: {
+          RootBottonNavigation.id: (context) => const RootBottonNavigation(),
+          ScreenOneScreen.id: (context) => const ScreenOneScreen(),
+          ScreenTwoScreen.id: (context) => const ScreenTwoScreen(),
+        });
   }
 }

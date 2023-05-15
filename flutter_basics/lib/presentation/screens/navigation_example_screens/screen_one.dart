@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ScreenOneScreen extends StatelessWidget {
+  static const String id = '/screenOne';
+
   const ScreenOneScreen({super.key});
 
   @override
@@ -13,7 +15,7 @@ class ScreenOneScreen extends StatelessWidget {
       body: Center(
         child: TextButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.popUntil(context, (route) => route.isFirst);
           },
           child: const Text('Go Back'),
         ),
