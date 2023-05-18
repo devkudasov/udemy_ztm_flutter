@@ -14,10 +14,10 @@ class QuestionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
+        Navigator.pushNamed(
           context,
-          MaterialPageRoute(
-              builder: (context) => QuestionDetails(question: _question)),
+          QuestionDetails.id,
+          arguments: _question,
         );
       },
       child: Card(

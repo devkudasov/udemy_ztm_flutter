@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:quizpocker/models/question.dart';
 
 class QuestionDetails extends StatelessWidget {
-  final Question question;
+  static const String id = '/details';
 
-  const QuestionDetails({super.key, required this.question});
+  const QuestionDetails({super.key});
 
-  void onPressHint(BuildContext context) {
+  void onPressHint(BuildContext context, Question question) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
@@ -18,6 +18,8 @@ class QuestionDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Question question =
+        ModalRoute.of(context)!.settings.arguments as Question;
     return Scaffold(
       appBar: AppBar(
         title: Text(question.category),
@@ -36,13 +38,13 @@ class QuestionDetails extends StatelessWidget {
                   TextButton(
                     child: const Text('Answer 1'),
                     onPressed: () {
-                      onPressHint(context);
+                      onPressHint(context, question);
                     },
                   ),
                   TextButton(
                     child: const Text('Answer 2'),
                     onPressed: () {
-                      onPressHint(context);
+                      onPressHint(context, question);
                     },
                   ),
                   TextButton(
@@ -60,7 +62,7 @@ class QuestionDetails extends StatelessWidget {
                   TextButton(
                     child: const Text('Answer 4'),
                     onPressed: () {
-                      onPressHint(context);
+                      onPressHint(context, question);
                     },
                   ),
                 ],
