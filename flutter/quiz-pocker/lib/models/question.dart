@@ -26,7 +26,6 @@ class Question {
   String get category => _category.title;
   String get image => _category.image;
   bool get hasHint {
-    print('hasHint $_shownHintIndex');
     return _shownHintIndex + 1 < _hints.length;
   }
 

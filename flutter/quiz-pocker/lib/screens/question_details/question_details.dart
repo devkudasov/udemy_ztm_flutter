@@ -20,6 +20,7 @@ class QuestionDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final Question question =
         ModalRoute.of(context)!.settings.arguments as Question;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(question.category),

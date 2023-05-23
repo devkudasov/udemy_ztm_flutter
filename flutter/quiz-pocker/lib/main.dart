@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizpocker/screens/question_details/question_details.dart';
-import 'package:quizpocker/screens/question_list/question_list.dart';
+import 'package:quizpocker/screens/root_navigation/root_navigation.dart';
 
 void main() => runApp(const App());
 
@@ -13,10 +13,10 @@ class App extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      initialRoute: QuestionListScreen.id,
+      initialRoute: RootNavigation.routeName,
       routes: {
-        QuestionListScreen.id: (context) => const QuestionListScreen(),
-        QuestionDetails.id: (BuildContext context) => const QuestionDetails(),
+        RootNavigation.routeName: (context) => const RootNavigation(),
+        QuestionDetails.id: (context) => const QuestionDetails(),
       },
     );
   }
