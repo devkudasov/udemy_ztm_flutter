@@ -39,7 +39,6 @@ class ScaffoldBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
