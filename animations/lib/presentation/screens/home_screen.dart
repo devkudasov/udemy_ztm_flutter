@@ -1,4 +1,7 @@
 import 'package:animations/application/theme_service.dart';
+import 'package:animations/presentation/screens/widgets/moon.dart';
+import 'package:animations/presentation/screens/widgets/star.dart';
+import 'package:animations/presentation/screens/widgets/sun.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -41,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: themeService.isDarkModeOn
-                          ? Colors.black87
+                          ? Colors.black.withOpacity(0.7)
                           : Colors.grey,
                       offset: const Offset(0.0, 3.0),
                       blurRadius: 10.0,
@@ -51,6 +54,78 @@ class HomeScreen extends StatelessWidget {
                 ),
                 child: Stack(
                   children: [
+                    Positioned(
+                      top: 100.0,
+                      right: 200.0,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(
+                          microseconds: 300,
+                        ),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 50.0,
+                      left: 50.0,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(
+                          microseconds: 300,
+                        ),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 60.0,
+                      right: 200.0,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(
+                          microseconds: 300,
+                        ),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 150.0,
+                      left: 320.0,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(
+                          microseconds: 300,
+                        ),
+                        child: const Star(),
+                      ),
+                    ),
+                    Positioned(
+                      top: 110.0,
+                      right: 50.0,
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(
+                          microseconds: 300,
+                        ),
+                        child: const Star(),
+                      ),
+                    ),
+                    AnimatedPositioned(
+                      top: themeService.isDarkModeOn ? 100.0 : 130.0,
+                      right: themeService.isDarkModeOn ? 100.0 : -40,
+                      duration: const Duration(milliseconds: 400),
+                      child: AnimatedOpacity(
+                        opacity: themeService.isDarkModeOn ? 1 : 0,
+                        duration: const Duration(
+                          microseconds: 300,
+                        ),
+                        child: const Moon(),
+                      ),
+                    ),
+                    AnimatedPadding(
+                        duration: const Duration(milliseconds: 200),
+                        padding: EdgeInsets.only(
+                            top: themeService.isDarkModeOn ? 160.0 : 50.0),
+                        child: const Center(child: Sun())),
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
