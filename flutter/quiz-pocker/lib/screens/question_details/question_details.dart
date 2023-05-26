@@ -1,19 +1,33 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:quizpocker/models/question.dart';
 
-class QuestionDetails extends StatelessWidget {
+class QuestionDetails extends StatefulWidget {
   static const String id = '/details';
 
   const QuestionDetails({super.key});
 
-  void onPressHint(BuildContext context, Question question) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(
-          question.showNextHint(),
-        ),
-      ),
-    );
+  @override
+  State<QuestionDetails> createState() => _QuestionDetailsState();
+}
+
+class _QuestionDetailsState extends State<QuestionDetails> {
+  String text = '';
+  bool isShowHint = false;
+
+  void onPressHint(Question question) {
+    setState(() {
+      text = question.showNextHint();
+      isShowHint = true;
+    });
+
+    Timer(
+        const Duration(
+          seconds: 4,
+        ), () {
+      setState(() => isShowHint = false);
+    });
   }
 
   @override
@@ -32,6 +46,14 @@ class QuestionDetails extends StatelessWidget {
           children: [
             Text(question.text),
             Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: AnimatedOpacity(
+                opacity: isShowHint ? 1 : 0,
+                duration: const Duration(seconds: 1),
+                child: Text(text),
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.only(bottom: 24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -39,13 +61,13 @@ class QuestionDetails extends StatelessWidget {
                   TextButton(
                     child: const Text('Answer 1'),
                     onPressed: () {
-                      onPressHint(context, question);
+                      onPressHint(question);
                     },
                   ),
                   TextButton(
                     child: const Text('Answer 2'),
                     onPressed: () {
-                      onPressHint(context, question);
+                      onPressHint(question);
                     },
                   ),
                   TextButton(
@@ -63,7 +85,7 @@ class QuestionDetails extends StatelessWidget {
                   TextButton(
                     child: const Text('Answer 4'),
                     onPressed: () {
-                      onPressHint(context, question);
+                      onPressHint(question);
                     },
                   ),
                 ],
